@@ -20,9 +20,9 @@
 <script>
 import Vue from 'vue'
 import axios from 'axios'
-import VueClipboard from 'vue-clipboard2'
-import VueAxios from 'vue-axios'
-import VueSimpleAlert from 'vue-simple-alert';
+import VueClipboard from 'vue-clipboard2'               //it enables to easily copy the content to clipboard
+import VueAxios from 'vue-axios'                        //to send POST request
+import VueSimpleAlert from 'vue-simple-alert';          //this plugin provides customizable alert popup component
 
 Vue.use(VueSimpleAlert);
 Vue.use(VueAxios, axios)
@@ -40,7 +40,7 @@ Vue.use(VueClipboard)
         },
         methods:{
             postData(e){
-                this.axios.post("http://localhost:8080/api/users",this.posts)
+                this.axios.post("http://localhost:8080/api/users",this.posts)   //it sends asynchronous HTTP requests to REST endpoints
                 .then((result)=>{
                     console.warn(result)
                 })
